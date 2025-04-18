@@ -93,7 +93,7 @@ export default function Skills() {
     <section className="space-y-6">
       <h2 className="text-2xl md:text-3xl font-bold">Tech Stack</h2>
 
-      <Tabs defaultValue="backend" className="w-full">
+      <Tabs defaultValue="frontend" className="w-full">
         <div className="overflow-x-auto pb-2">
           <TabsList className="grid min-w-max grid-cols-6 mb-4 md:mb-8">
             <TabsTrigger value="frontend">Frontend</TabsTrigger>

@@ -17,7 +17,7 @@ export function Slider({
   children,
   itemsPerView = 2,
   autoplay = false,
-  autoplayDelay = 3000,
+  autoplayDelay = 5000,
   showControls = true,
   showIndicators = true,
   className,
@@ -26,9 +26,6 @@ export function Slider({
   const [visibleCount, setVisibleCount] = useState(itemsPerView);
   const [isAutoPlaying, setIsAutoPlaying] = useState(autoplay);
   const totalItems = children.length;
-
-  // Create a duplicated set of items for infinite scrolling
-  const items = [...children];
 
   // Handle responsive behavior
   useEffect(() => {
@@ -48,46 +45,37 @@ export function Slider({
     return () => window.removeEventListener("resize", handleResize);
   }, [itemsPerView]);
 
-  // Handle autoplay with infinite scrolling
+  // Handle autoplay
   useEffect(() => {
     if (!isAutoPlaying) return;
 
+    const maxIndex = Math.max(0, totalItems - visibleCount);
     const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % totalItems);
+      setActiveIndex((current) => (current >= maxIndex ? 0 : current + 1));
     }, autoplayDelay);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, totalItems, autoplayDelay]);
+  }, [isAutoPlaying, visibleCount, totalItems, autoplayDelay]);
 
   const goToPrev = useCallback(() => {
     setIsAutoPlaying(false);
-    setActiveIndex((current) => {
-      const newIndex = current - 1;
-      return newIndex < 0 ? totalItems - 1 : newIndex;
-    });
-  }, [totalItems]);
+    setActiveIndex((current) => Math.max(0, current - 1));
+  }, []);
 
   const goToNext = useCallback(() => {
     setIsAutoPlaying(false);
-    setActiveIndex((current) => (current + 1) % totalItems);
-  }, [totalItems]);
+    const maxIndex = Math.max(0, totalItems - visibleCount);
+    setActiveIndex((current) => (current >= maxIndex ? current : current + 1));
+  }, [totalItems, visibleCount]);
 
   const goToSlide = useCallback((index: number) => {
     setIsAutoPlaying(false);
     setActiveIndex(index);
   }, []);
 
-  // Get transition properties for smooth infinite scrolling
-  const getTransformStyle = () => {
-    // Calculate the percentage to translate
-    const percentage =
-      (activeIndex * (100 / visibleCount)) %
-      (totalItems * (100 / visibleCount));
-
-    return {
-      transform: `translateX(-${percentage}%)`,
-    };
-  };
+  const maxIndex = Math.max(0, totalItems - visibleCount);
+  const canGoNext = activeIndex < maxIndex;
+  const canGoPrev = activeIndex > 0;
 
   return (
     <div className={cn("relative", className)}>
@@ -95,9 +83,11 @@ export function Slider({
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
-          style={getTransformStyle()}
+          style={{
+            transform: `translateX(-${activeIndex * (100 / visibleCount)}%)`,
+          }}
         >
-          {items.map((child, index) => (
+          {children.map((child, index) => (
             <div
               key={index}
               className="w-full shrink-0 px-2"
@@ -109,19 +99,21 @@ export function Slider({
         </div>
       </div>
 
-      {/* Controls - Always enabled for infinite scrolling */}
+      {/* Controls */}
       {showControls && (
         <div className="flex justify-between absolute top-1/2 -translate-y-1/2 left-2 right-2 px-2">
           <button
             onClick={goToPrev}
-            className="p-2 rounded-full bg-background border shadow-sm hover:bg-primary/10 transition-colors z-10"
+            disabled={!canGoPrev}
+            className="p-2 rounded-full bg-background border shadow-sm hover:bg-primary/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10"
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={goToNext}
-            className="p-2 rounded-full bg-background border shadow-sm hover:bg-primary/10 transition-colors z-10"
+            disabled={!canGoNext}
+            className="p-2 rounded-full bg-background border shadow-sm hover:bg-primary/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10"
             aria-label="Next slide"
           >
             <ChevronRight className="h-5 w-5" />
@@ -132,13 +124,13 @@ export function Slider({
       {/* Indicators */}
       {showIndicators && totalItems > visibleCount && (
         <div className="flex justify-center gap-2 mt-4">
-          {Array.from({ length: totalItems }).map((_, index) => (
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={cn(
                 "h-2 rounded-full transition-all",
-                activeIndex === index ? "bg-primary w-6" : "bg-primary/30 w-2",
+                activeIndex === index ? "bg-primary w-6" : "bg-primary/30 w-2"
               )}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={activeIndex === index}

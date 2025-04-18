@@ -91,7 +91,6 @@ export default function TestimonialSection() {
 
       <Slider
         itemsPerView={2}
-        autoplay={true}
         autoplayDelay={5000}
         showControls={true}
         showIndicators={true}

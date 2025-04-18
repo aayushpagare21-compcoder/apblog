@@ -38,13 +38,7 @@ export default function FreelanceServices() {
 
       {/* Remove the unnecessary grid container that was conflicting with the slider */}
       <div className="w-full">
-        <Slider
-          itemsPerView={2}
-          autoplay={true}
-          autoplayDelay={5000}
-          showControls={true}
-          showIndicators={true}
-        >
+        <Slider itemsPerView={2} showControls={true} showIndicators={true}>
           {serviceCards}
         </Slider>
       </div>
