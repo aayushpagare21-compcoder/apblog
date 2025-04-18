@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t">
       <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col items-center justify-between gap-4 md:flex-row md:h-16">
         <div className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} aayushpagare.com All rights reserved.
+          Handcrafted by me using Next.js with 💖
         </div>
         <div className="flex items-center space-x-4">
           <Link

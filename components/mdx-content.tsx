@@ -21,7 +21,7 @@ export const StyledContent = ({
       "[&_td]:border [&_td]:px-4 [&_td]:py-2 [&_td]:text-left [&_td[align=center]]:text-center [&_td[align=right]]:text-right",
       "[&_a]:font-medium [&_a]:underline [&_a]:underline-offset-4",
       "[&_code]:relative [&_code]:rounded [&_code]:bg-muted [&_code]:px-[0.3rem] [&_code]:py-[0.2rem] [&_code]:font-mono [&_code]:text-sm",
-      className
+      className,
     )}
     {...props}
   />

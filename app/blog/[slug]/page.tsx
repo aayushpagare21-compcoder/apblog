@@ -9,7 +9,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
-export const revalidate = 84000
+export const revalidate = 84000;
 
 export function generateStaticParams() {
   const blogs = getAllPosts();
