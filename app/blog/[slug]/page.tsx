@@ -2,20 +2,31 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
-import { getPostBySlug } from "@/lib/mdx";
-import MdxContent from "@/components/mdx-content";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import { StyledContent } from "@/components/mdx-content";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+
+export const revalidate = 84000
+
+export function generateStaticParams() {
+  const blogs = getAllPosts();
+
+  return blogs.map((blog) => {
+    return {
+      slug: blog.slug,
+    };
+  });
+}
 
 export async function generateMetadata({
   params,
 }: // eslint-disable-next-line @typescript-eslint/no-explicit-any
 any): Promise<Metadata> {
   const awaitedParams = await params;
-  const post = await getPostBySlug(awaitedParams.slug);
+  const post = getPostBySlug(awaitedParams.slug);
 
   if (!post) {
     return {
@@ -32,13 +43,11 @@ any): Promise<Metadata> {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function BlogPostPage({ params }: any) {
   const awaitedParams = await params;
-  const post = await getPostBySlug(awaitedParams.slug);
+  const post = getPostBySlug(awaitedParams.slug);
 
   if (!post) {
     notFound();
   }
-
-  const mdxSource: MDXRemoteSerializeResult = await serialize(post.content);
 
   return (
     <div className="container px-4 sm:px-6 py-6 sm:py-12">
@@ -70,7 +79,9 @@ export default async function BlogPostPage({ params }: any) {
         </div>
 
         <div className="prose dark:prose-invert max-w-none prose-sm sm:prose-base">
-          <MdxContent source={mdxSource} />
+          <StyledContent>
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </StyledContent>
         </div>
       </article>
     </div>

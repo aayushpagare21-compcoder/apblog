@@ -1,5 +1,4 @@
 ---
-slug: "embed-me"
 title: "EmbedME"
 description: "Embedme is an embeddable chatbot that seamlessly integrates into any portfolio website, effectively representing the user and showcasing their unique professional identity."
 image: "/embed-me-embed-your-own-chatbot-to-your-portfolio.png"

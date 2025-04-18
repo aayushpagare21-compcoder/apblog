@@ -1,5 +1,4 @@
 ---
-slug: "answerwriting"
 title: "AnswerWriting"
 description: "AnswerWriting is the ultimate platform for UPSC Mains aspirants..."
 image: "/answer-writing-free-mains-answer-writing-and-evaluation-with-ai.webp"

@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "Read Aayush's thoughts on development, design, and technology",
 };
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+export default function BlogPage() {
+  const posts = getAllPosts();
 
   return (
     <div className="container py-12 max-w-4xl mx-auto px-4">

@@ -5,16 +5,28 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getProjectBySlug } from "@/lib/projects";
-import MdxContent from "@/components/mdx-content";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+import { getAllProjects, getProjectBySlug } from "@/lib/projects";
+import ReactMarkdown from "react-markdown";
+import { StyledContent } from "@/components/mdx-content";
+
+export const revalidate = 84000;
+
+export function generateStaticParams() {
+  const projects = getAllProjects();
+
+  return projects.map((project) => {
+    return {
+      slug: project.slug,
+    };
+  });
+}
 
 export async function generateMetadata({
   params,
 }: // eslint-disable-next-line @typescript-eslint/no-explicit-any
 any): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug);
+  const awaitedParams = await params;
+  const project = await getProjectBySlug(awaitedParams.slug);
 
   if (!project) {
     return {
@@ -30,13 +42,13 @@ any): Promise<Metadata> {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function ProjectPage({ params }: any) {
-  const project = await getProjectBySlug(params.slug);
+  const awaitedParams = await params;
+  const project = await getProjectBySlug(awaitedParams.slug);
 
   if (!project) {
     notFound();
   }
 
-  const mdxSource: MDXRemoteSerializeResult = await serialize(project.content);
   return (
     <div className="container px-4 sm:px-6 py-8 sm:py-12">
       <article className="mx-auto max-w-4xl">
@@ -100,9 +112,10 @@ export default async function ProjectPage({ params }: any) {
             priority
           />
         </div>
-
         <div className="prose dark:prose-invert max-w-none prose-sm sm:prose-base">
-          <MdxContent source={mdxSource} />
+          <StyledContent>
+            <ReactMarkdown>{project.content}</ReactMarkdown>
+          </StyledContent>
         </div>
       </article>
     </div>
