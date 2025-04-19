@@ -6,6 +6,7 @@ export interface Post {
   content: string;
   categories: string[];
   readingTime: number;
+  image?: string;
 }
 
 export interface Project {

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -9,10 +8,35 @@ import {
   Building,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "About | Aayush Pagare",
+export const metadata = {
+  title: "About – Aayush Pagare | Full Stack Developer & AI Integrator",
   description:
-    "Full Stack Developer with experience in end-to-end development, AI integration, and rapid prototyping",
+    "Learn about Aayush Pagare, a Full Stack Engineer with 2 years of experience in building end-to-end web applications, AI integration, and delivering production-ready systems.",
+  openGraph: {
+    title: "About – Aayush Pagare | Full Stack Developer & AI Integrator",
+    description:
+      "Discover Aayush Pagare's journey as a Full Stack Engineer specializing in building web applications, integrating AI technologies, and delivering scalable solutions.",
+    url: "https://aayushpagare.com/about",
+    siteName: "Aayush Pagare",
+    images: [
+      {
+        url: "https://aayushpagare.com/aayush-pagare.jpg", // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: "Aayush Pagare About Page",
+      },
+    ],
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About – Aayush Pagare | Full Stack Developer & AI Integrator",
+    description:
+      "Explore the professional background of Aayush Pagare, a Full Stack Engineer with expertise in AI integration and web development.",
+    images: ["https://aayushpagare.com/aayush-pagare.jpg"], // Replace with your actual Twitter image URL
+    creator: "@_imaayush21_", // Optional: Replace with your Twitter handle
+  },
+  metadataBase: new URL("https://aayushpagare.com"),
 };
 
 export default function AboutPage() {

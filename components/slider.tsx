@@ -130,7 +130,7 @@ export function Slider({
               onClick={() => goToSlide(index)}
               className={cn(
                 "h-2 rounded-full transition-all",
-                activeIndex === index ? "bg-primary w-6" : "bg-primary/30 w-2"
+                activeIndex === index ? "bg-primary w-6" : "bg-primary/30 w-2",
               )}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={activeIndex === index}

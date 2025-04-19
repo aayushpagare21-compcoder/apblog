@@ -44,6 +44,7 @@ export function getPostBySlug(slug: string): Post | null {
     date: data.date,
     excerpt: data.excerpt,
     content,
+    image: data?.image,
     categories: data.categories || [],
     readingTime: data.readingTime || Math.ceil(content.split(" ").length / 200),
   };

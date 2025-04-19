@@ -35,8 +35,25 @@ any): Promise<Metadata> {
   }
 
   return {
-    title: `${project.title} | Aayush Pagare`,
+    title: `Projects - ${project.title}`,
     description: project.description,
+    openGraph: {
+      title: `Blog - ${project.title}`,
+      description: project.description,
+      url: `https://aayushpagare.com/blog/${project.slug}`,
+      siteName: "Aayush Pagare",
+      images: [
+        {
+          url: project.image
+            ? `https://aayushpagare.com/${project.image}`
+            : "https://aayushpagare.com/aayush-pagare.jpg", // Replace with your actual OG image URL
+          width: 1200,
+          height: 630,
+          alt: project.description,
+        },
+      ],
+      type: "profile",
+    },
   };
 }
 
