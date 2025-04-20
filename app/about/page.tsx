@@ -7,20 +7,21 @@ import {
   CheckCircle,
   Building,
 } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
-  title: "About – Aayush Pagare | Full Stack Developer & AI Integrator",
+  title: "About – Aayush Pagare | Full Stack Developer & AI Engineer",
   description:
     "Learn about Aayush Pagare, a Full Stack Engineer with 2 years of experience in building end-to-end web applications, AI integration, and delivering production-ready systems.",
   openGraph: {
-    title: "About – Aayush Pagare | Full Stack Developer & AI Integrator",
+    title: "About – Aayush Pagare | Full Stack Developer & AI Engineer",
     description:
       "Discover Aayush Pagare's journey as a Full Stack Engineer specializing in building web applications, integrating AI technologies, and delivering scalable solutions.",
     url: "https://aayushpagare.com/about",
     siteName: "Aayush Pagare",
     images: [
       {
-        url: "https://aayushpagare.com/aayush-pagare.jpg", // Replace with your actual OG image URL
+        url: "https://aayushpagare.com/aayush-pagare.jpeg",
         width: 1200,
         height: 630,
         alt: "Aayush Pagare About Page",
@@ -30,11 +31,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About – Aayush Pagare | Full Stack Developer & AI Integrator",
+    title: "About – Aayush Pagare | Full Stack Developer & AI Engineer",
     description:
       "Explore the professional background of Aayush Pagare, a Full Stack Engineer with expertise in AI integration and web development.",
-    images: ["https://aayushpagare.com/aayush-pagare.jpg"], // Replace with your actual Twitter image URL
-    creator: "@_imaayush21_", // Optional: Replace with your Twitter handle
+    images: ["https://aayushpagare.com/aayush-pagare.jpeg"],
+    creator: "@_imaayush21_",
   },
   metadataBase: new URL("https://aayushpagare.com"),
 };
@@ -82,18 +83,45 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="container py-12 max-w-4xl mx-auto px-4">
-      <h1 className="text-3xl font-bold tracking-tight mb-6">About Me</h1>
+    <div className="container py-8 md:py-12 max-w-4xl mx-auto px-4">
+      {/* Mobile-optimized hero section */}
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8 md:mb-12">
+        {/* Profile image - sized appropriately for mobile */}
+        <div className="w-40 h-40 md:w-56 md:h-56 flex-shrink-0 rounded-full overflow-hidden relative shadow-md">
+          <Image
+            src="/aayush-pagare.jpeg"
+            alt="Aayush Pagare"
+            fill
+            sizes="(max-width: 768px) 160px, 224px"
+            className="object-cover"
+            priority
+          />
+        </div>
 
-      <section className="mb-12">
+        {/* Profile information beside the image on desktop, below on mobile */}
+        <div className="text-center md:text-left flex-grow">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">
+            Aayush Pagare
+          </h1>
+          <h2 className="text-lg md:text-xl text-muted-foreground mb-4">
+            Full Stack Developer & AI Engineer
+          </h2>
+
+          <div className="prose max-w-none">
+            <p className="text-base md:text-lg leading-relaxed">
+              I am a Full Stack Engineer with 2 years of experience specializing
+              in building web applications end-to-end from backend to frontend,
+              integrating AI, and deploying production-ready systems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section className="mb-8 md:mb-12">
         <div className="prose max-w-none">
-          <p className="text-lg leading-relaxed mb-4">
-            I am a Full Stack Engineer with 2 years of experience specializing
-            in building web applications end-to-end from backend to frontend,
-            integrating AI, and deploying production-ready systems.
-          </p>
-
-          <h3 className="text-xl font-semibold mt-6 mb-3">What I Offer:</h3>
+          <h3 className="text-lg md:text-xl font-semibold mb-3">
+            What I Offer:
+          </h3>
           <ul className="space-y-2">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 shrink-0" />
@@ -126,7 +154,9 @@ export default function AboutPage() {
             </li>
           </ul>
 
-          <h3 className="text-xl font-semibold mt-6 mb-3">How I Work:</h3>
+          <h3 className="text-lg md:text-xl font-semibold mt-6 mb-3">
+            How I Work:
+          </h3>
           <ul className="space-y-2">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 shrink-0" />
@@ -154,32 +184,39 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          <Briefcase className="mr-2 h-6 w-6 text-primary" />
+      <section className="mb-8 md:mb-12">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center">
+          <Briefcase className="mr-2 h-5 w-5 md:h-6 md:w-6 text-primary" />
           Professional Experience
         </h2>
 
         {experienceData.map((exp, index) => (
-          <Card key={index} className="mb-6">
-            <CardHeader className="pb-2">
+          <Card key={index} className="mb-4 md:mb-6">
+            <CardHeader className="pb-2 px-4 md:px-6 pt-4 md:pt-6">
               <div className="flex justify-between items-start flex-wrap gap-2">
-                <CardTitle className="text-xl">{exp.position}</CardTitle>
-                <Badge variant="outline" className="flex items-center">
+                <CardTitle className="text-lg md:text-xl">
+                  {exp.position}
+                </CardTitle>
+                <Badge
+                  variant="outline"
+                  className="flex items-center text-xs md:text-sm"
+                >
                   <CalendarIcon className="mr-1 h-3 w-3" />
                   {exp.duration}
                 </Badge>
               </div>
               <div className="flex items-center gap-1">
                 <Building className="h-4 w-4 text-muted-foreground" />
-                <p className="text-muted-foreground font-medium">
+                <p className="text-muted-foreground font-medium text-sm md:text-base">
                   {exp.company} · {exp.type}
                 </p>
               </div>
-              <p className="text-sm text-muted-foreground">{exp.location}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">
+                {exp.location}
+              </p>
             </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-5 space-y-1">
+            <CardContent className="px-4 md:px-6 py-2 md:py-3">
+              <ul className="list-disc pl-4 md:pl-5 space-y-1 text-sm md:text-base">
                 {exp.responsibilities.map((resp, idx) => (
                   <li key={idx}>{resp}</li>
                 ))}
@@ -189,27 +226,32 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          <GraduationCap className="mr-2 h-6 w-6 text-primary" />
+      <section className="mb-8">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center">
+          <GraduationCap className="mr-2 h-5 w-5 md:h-6 md:w-6 text-primary" />
           Education
         </h2>
 
         {educationData.map((edu, index) => (
-          <Card key={index} className="mb-6">
-            <CardHeader className="pb-2">
-              <div className="flex justify-between items-start">
-                <CardTitle className="text-xl">{edu.degree}</CardTitle>
-                <Badge variant="outline" className="flex items-center">
+          <Card key={index} className="mb-4 md:mb-6">
+            <CardHeader className="pb-2 px-4 md:px-6 pt-4 md:pt-6">
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <CardTitle className="text-lg md:text-xl">
+                  {edu.degree}
+                </CardTitle>
+                <Badge
+                  variant="outline"
+                  className="flex items-center text-xs md:text-sm"
+                >
                   <CalendarIcon className="mr-1 h-3 w-3" />
                   {edu.duration}
                 </Badge>
               </div>
-              <p className="text-muted-foreground font-medium">
+              <p className="text-muted-foreground font-medium text-sm md:text-base">
                 {edu.institution}
               </p>
               {edu.achievements && (
-                <p className="text-sm font-medium mt-1">
+                <p className="text-xs md:text-sm font-medium mt-1">
                   Achievement: {edu.achievements}
                 </p>
               )}

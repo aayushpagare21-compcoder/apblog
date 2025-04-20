@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,6 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
@@ -26,7 +26,20 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between max-w-6xl mx-auto px-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          {/* Logo Image that links to home */}
+          <Link href="/" className="flex items-center">
+            <div className="relative w-8 h-8 overflow-hidden rounded-full">
+              <Image
+                src="/aayush-pagare.jpeg"
+                alt="Logo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </Link>
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4 ml-4">
             {navItems.map((item) => (

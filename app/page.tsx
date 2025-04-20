@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "Aayush Pagare",
     images: [
       {
-        url: "https://aayushpagare.com/aayushpagare.jpg", // Replace with your actual OG image
+        url: "https://aayushpagare.com/aayush-pagare.jpeg", // Replace with your actual OG image
         width: 1200,
         height: 630,
         alt: "Aayush Pagare Portfolio",
@@ -32,7 +32,7 @@ export const metadata = {
     title: "Aayush Pagare – Full Stack Developer",
     description:
       "A Full stack engineer with 2 years of experience. Skilled at building web-applications end-to-end from backend to frontend, integrating AI and deploying it.",
-    images: ["https://aayushpagare.com/aayush-pagare.jpg"], // Replace with your image
+    images: ["https://aayushpagare.com/aayush-pagare.jpeg"], // Replace with your image
     creator: "@_imaayush21_",
   },
   metadataBase: new URL("https://aayushpagare.com"),

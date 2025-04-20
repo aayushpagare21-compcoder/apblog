@@ -46,7 +46,7 @@ any): Promise<Metadata> {
         {
           url: project.image
             ? `https://aayushpagare.com/${project.image}`
-            : "https://aayushpagare.com/aayush-pagare.jpg", // Replace with your actual OG image URL
+            : "https://aayushpagare.com/aayush-pagare.jpeg", // Replace with your actual OG image URL
           width: 1200,
           height: 630,
           alt: project.description,
