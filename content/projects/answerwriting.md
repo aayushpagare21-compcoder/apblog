@@ -1,6 +1,6 @@
 ---
 title: "AnswerWriting"
-description: "AnswerWriting is the ultimate platform for UPSC Mains aspirants..."
+description: "AnswerWriting is the ultimate platform for UPSC Mains aspirants to practice answer writing and get instant AI-powered evaluation. Improve your answers, enhance your writing skills, and boost your UPSC preparation for free."
 image: "/answer-writing-free-mains-answer-writing-and-evaluation-with-ai.webp"
 technologies:
   - Langchainjs
