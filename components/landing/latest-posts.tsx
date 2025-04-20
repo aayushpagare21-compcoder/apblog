@@ -2,11 +2,9 @@ import { ArrowRight } from "lucide-react";
 import PostCard from "../post-card";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/mdx";
+import { Post } from "@/lib/types";
 
-export default function LatestPosts() {
-  const posts = getAllPosts();
-  const latestPosts = posts.slice(0, 2);
+export default function LatestPosts({ latestPosts }: { latestPosts: Post[] }) {
   return (
     <section className="space-y-8">
       <div className="flex items-center justify-between">

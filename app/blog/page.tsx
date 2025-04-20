@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/mdx";
-import PostCard from "@/components/post-card";
+import { BlogComponent } from "@/components/blog";
 
 export const metadata = {
   title: "Blog – Aayush Pagare | Full Stack Developer & AI Engineer",
@@ -35,22 +35,5 @@ export const metadata = {
 export default function BlogPage() {
   const posts = getAllPosts();
 
-  return (
-    <div className="container py-12 max-w-4xl mx-auto px-4">
-      <h1 className="text-3xl font-bold tracking-tight mb-6">Blog</h1>
-      {posts.length > 0 ? (
-        <div className="grid gap-6 sm:grid-cols-2">
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">
-            No posts found in this category.
-          </p>
-        </div>
-      )}
-    </div>
-  );
+  return <BlogComponent posts={posts} />;
 }

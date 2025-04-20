@@ -1,13 +1,14 @@
-import { getAllProjects } from "@/lib/projects";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ProjectCard from "../project-card";
 import { Button } from "../ui/button";
+import { Project } from "@/lib/types";
 
-export default function FeaturedProjects() {
-  const projects = getAllProjects();
-  const featuredProjects = projects.slice(0, 2);
-
+export default function FeaturedProjects({
+  featuredProjects,
+}: {
+  featuredProjects: Project[];
+}) {
   return (
     <section className="space-y-8">
       <div className="flex items-center justify-between">

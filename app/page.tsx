@@ -1,10 +1,6 @@
-import Hero from "@/components/landing/hero";
-import FreelanceServices from "@/components/landing/freelance";
-import ClientTestimonials from "@/components/landing/clients";
-import FeaturedProjects from "@/components/landing/featured-projects";
-import LatestPosts from "@/components/landing/latest-posts";
-import Skills from "@/components/landing/skills";
-import { Button } from "@/components/ui/button";
+import { LandingComponent } from "@/components/landing";
+import { getAllPosts } from "@/lib/mdx";
+import { getAllProjects } from "@/lib/projects";
 
 export const metadata = {
   title: "Aayush Pagare – Full Stack Developer",
@@ -39,30 +35,15 @@ export const metadata = {
 };
 
 export default function Home() {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-12 space-y-9 md:space-y-18">
-      <Hero />
-      <FreelanceServices />
-      <FeaturedProjects />
-      <ClientTestimonials />
-      <LatestPosts />
-      <Skills />
+  const projects = getAllProjects();
+  const featuredProjects = projects.slice(0, 2);
+  const posts = getAllPosts();
+  const latestPosts = posts.slice(0, 2);
 
-      {/* Contact CTA - Simple and direct */}
-      <section className="border-t pt-12">
-        <div className="text-center space-y-4">
-          <h2 className="text-2xl font-bold">{`Let's Build Something Together`}</h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            {`Have a project in mind or want to discuss tech? I'm currently
-            available for freelance work and collaborations.`}
-          </p>
-          <a href="mailto:aayushpagare21@gmail.com">
-            <Button size="lg" className="mt-4 cursor-pointer">
-              Get in touch
-            </Button>
-          </a>
-        </div>
-      </section>
-    </div>
+  return (
+    <LandingComponent
+      featuredProjects={featuredProjects}
+      latestPosts={latestPosts}
+    />
   );
 }
