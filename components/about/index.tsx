@@ -115,7 +115,7 @@ export default function AboutPage() {
       company: "MatlabInfotech",
       type: "Full-time",
       location: "Vadodara, Gujarat, India",
-      duration: "Aug 2023 - Nov 2024 · 1 yr 4 mos",
+      duration: "Feb 2023 - Nov 2024 · 1 yr 8 mos",
       responsibilities: [
         "Worked on a fintech project as part of an Agile team, successfully implementing various user stories",
         "Explored tools such as Customer.io, Census, DBT Cloud, and Snowflake to enhance data workflows",

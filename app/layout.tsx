@@ -5,6 +5,8 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Using Inter with a wider subset for better language support
 const inter = Inter({
@@ -39,6 +41,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
