@@ -1,5 +1,6 @@
 "use client";
 
+import AayushImage from "@/public/aayush-pagare.jpeg";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -150,8 +151,10 @@ export default function AboutPage() {
           {/* Profile image */}
           <RevealText className="w-40 h-40 md:w-56 md:h-56 flex-shrink-0 rounded-full overflow-hidden relative shadow-md">
             <Image
-              src="/aayush-pagare.jpeg"
+              src={AayushImage}
               alt="Aayush Pagare"
+              loading="lazy"
+              placeholder="blur"
               fill
               sizes="(max-width: 768px) 160px, 224px"
               className="object-cover"
