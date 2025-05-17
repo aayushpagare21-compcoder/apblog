@@ -1,5 +1,5 @@
 ---
-title: "RabbitMQ Serier #1 – Stop calling RabbitMQ a Queue"
+title: "Stop calling RabbitMQ a Queue"
 date: "2025-05-17"
 excerpt: "RabbitMQ is often mistaken as just a queue. In reality, it’s a powerful message broker that helps your services talk to each other asynchronously and reliably. In this post, we’ll break down what a broker actually does, why RabbitMQ is essential in modern microservices, and how it enables decoupling and scalability in your architecture."
 categories:
