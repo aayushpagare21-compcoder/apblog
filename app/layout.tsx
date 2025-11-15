@@ -32,7 +32,7 @@ export default function RootLayout({
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
-            __html: ` !(function (h, i, e) { var t = 5000; var n = h.createElement("style"); n.id = e; n.innerHTML = "body{opacity:0}"; h.head.appendChild(n); i.rmfk = function () { var t = h.getElementById(e); t && t.parentNode.removeChild(t); }; setTimeout(i.rmfk, t); })(document, window, "optimeleon-overlay");`,
+            __html: ` !(function (h, i, e) { var t = 5000; console.log('Applying the overlay'); var n = h.createElement("style"); n.id = e; n.innerHTML = "body{opacity:0}"; h.head.appendChild(n); i.rmfk = function () { var t = h.getElementById(e); t && t.parentNode.removeChild(t); }; setTimeout(i.rmfk, t); })(document, window, "optimeleon-overlay");`,
           }}
         />
         <script
