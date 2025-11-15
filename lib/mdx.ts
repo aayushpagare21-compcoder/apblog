@@ -8,7 +8,9 @@ const postsDirectory = path.join(process.cwd(), "content/blog");
 export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  const posts: Post[] = fileNames.map((fileName) => {
+  const posts: Post[] = fileNames
+    .filter((fileName) => fileName.endsWith('.md'))
+    .map((fileName) => {
     const slug = fileName.replace(/\.md?$/, "");
     const filePath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf8");
