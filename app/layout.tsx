@@ -28,6 +28,46 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
+      <head>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `!(function (h, i, e) {
+  var t = 2000;
+  var n = h.createElement("style");
+  n.id = e;
+  n.innerHTML = "body{opacity:0}";
+  h.head.appendChild(n);
+  i.rmfk = function () {
+    var t = h.getElementById(e);
+    t && t.parentNode.removeChild(t);
+  };
+  setTimeout(i.rmfk, t);
+})(document, window, "optimeleon-overlay");`,
+          }}
+        />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `window.setOptiCookieConsent = function(consent) {
+    localStorage.setItem("opti_consent", consent);
+  };`,
+          }}
+        />
+        <script
+          type="text/javascript"
+          async
+          src="https://cdn-stag.optimeleon.com/aay-z4o6w/aay-z4o72/v1.main.js"
+        />
+        <script
+          type="text/javascript"
+          async
+          dangerouslySetInnerHTML={{
+            __html: `!function(e,t,o,n,a,c,l){e.optimeleon||(a=e.optimeleon=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},a.push=a,a.queue=[],(c=t.createElement(o)).async=!0,c.src="https://cdn-stag.optimeleon.com/aay-z4o6w/aay-z4o72/v1.main.js",(l=t.getElementsByTagName(o)[0]).parentNode.insertBefore(c,l))}(window,document,"script");
+  optimeleon("init",true,true);`,
+          }}
+        />
+      </head>
       <body className="bg-background text-foreground antialiased">
         <ThemeProvider
           attribute="class"
