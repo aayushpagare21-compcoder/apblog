@@ -41,12 +41,11 @@ export default function RootLayout({
             __html: `window.setOptiCookieConsent = function(consent) { localStorage.setItem("opti_consent", consent); };`,
           }}
         /> 
-        <script type="text/javascript" defer src="https://cdn-stag.optimeleon.com/aay-z4o6w/aay-z4o72/v1.main.js"></script>
         <script
           type="text/javascript"
-          defer
+          async
           dangerouslySetInnerHTML={{
-            __html: ` !function(e,t,o,n,a,c,l){e.optimeleon||(a=e.optimeleon=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},a.push=a,a.queue=[],(c=t.createElement(o)).defer=!0,c.src="https://cdn-stag.optimeleon.com/aay-z4o6w/aay-z4o72/v1.main.js",(l=t.getElementsByTagName(o)[0]).parentNode.insertBefore(c,l))}(window,document,"script"); optimeleon("init",true,true);`,
+            __html: ` !function(e,t,o,n,a,c,l){e.optimeleon||(a=e.optimeleon=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},a.push=a,a.queue=[],(c=t.createElement(o)).async=!0,c.src="https://cdn-stag.optimeleon.com/aay-z4o6w/aay-z4o72/v1.main.js",(l=t.getElementsByTagName(o)[0]).parentNode.insertBefore(c,l))}(window,document,"script"); optimeleon("init",true,true);`,
           }}
         />
       </head>
