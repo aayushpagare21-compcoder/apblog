@@ -65,7 +65,7 @@ export const LandingComponent = ({
               </p>
               <a href="mailto:aayushpagare21@gmail.com">
                 <Button size="lg" className="mt-4 cursor-pointer" onClick={() => { 
-                  const myWindow = window as Window & typeof globalThis & {optimeleon: any}
+                  const myWindow = window as Window & typeof globalThis & {optimeleon: (...args: string[]) => void }
                   if(myWindow.optimeleon){
                     myWindow.optimeleon("track", "a_good_custom_event")
                   }
