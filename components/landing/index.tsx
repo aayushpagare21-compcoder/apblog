@@ -64,11 +64,7 @@ export const LandingComponent = ({
                 available for freelance work and collaborations.`}
               </p>
               <a href="mailto:aayushpagare21@gmail.com">
-                <Button size="lg" className="mt-4 cursor-pointer" onClick={() => {  
-                  if(window.optimeleon){
-                    window.optimeleon("track", "a_good_custom_event")
-                  }
-                }}>
+                <Button size="lg" className="mt-4 cursor-pointer">
                   Get in touch
                 </Button>
               </a>
