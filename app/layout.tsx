@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
-      <head>
+      {/* <head>
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -48,7 +48,7 @@ export default function RootLayout({
             __html: ` !function(e,t,n,o,a,c,l){e.optimeleon||(a=e.optimeleon=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},a.push=a,a.queue=[],(c=t.createElement(n)).async=!0,c.src="https://cdn-stag.optimeleon.com/tar-pk400/aay-pk403/v1.main.js",(l=t.getElementsByTagName(n)[0]).parentNode.insertBefore(c,l))}(window,document,"script"); optimeleon("init",true,true);`,
           }}
         />
-      </head>
+      </head> */}
       <body className="bg-background text-foreground antialiased">
         <ThemeProvider
           attribute="class"
