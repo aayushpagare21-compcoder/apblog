@@ -11,6 +11,7 @@ import Skills from "@/components/landing/skills";
 import { Button } from "@/components/ui/button";
 import { Post, Project } from "@/lib/types";
 import { RevealSection } from "../reveal-section";
+import HeroImage from "./hero-image";
 
 export const LandingComponent = ({
   featuredProjects,
@@ -30,6 +31,8 @@ export const LandingComponent = ({
       />
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-9 md:space-y-18">
+        <HeroImage />
+
         <RevealSection>
           <Hero />
         </RevealSection>
