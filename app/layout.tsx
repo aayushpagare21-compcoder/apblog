@@ -29,12 +29,31 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: ` !(function (h, i, e) { var t = 2000; console.log('Applying the overlay'); var n = h.createElement("style"); n.id = e; n.innerHTML = "body{opacity:0}"; h.head.appendChild(n); i.rmfk = function () { var t = h.getElementById(e); t && t.parentNode.removeChild(t); }; setTimeout(i.rmfk, t); })(document, window, "optimeleon-overlay");`,
-          }}
-        />
+       <script
+  type="text/javascript"
+  dangerouslySetInnerHTML={{
+    __html: `!(function (h, i, e) {
+      var t = 2000;
+      console.log('Anti Flicker Applying the overlay');
+
+      var n = h.createElement("style");
+      n.id = e;
+      n.innerHTML = "body{opacity:0}";
+      h.head.appendChild(n);
+
+      i.rmfk = function () {
+        var t = h.getElementById(e);
+        if (t) {
+          console.log('Anti Flicker Removing the overlay after max timeout reached');
+          t.parentNode.removeChild(t);
+        }
+      };
+
+      setTimeout(i.rmfk, t);
+    })(document, window, "optimeleon-overlay");`,
+  }}
+/>
+
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
