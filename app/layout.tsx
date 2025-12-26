@@ -46,7 +46,7 @@ export default function RootLayout({
 
   {/* Optimeleon – Page hide overlay */}
   <Script
-    id="optimeleon-overlay"
+    id="metalytic"
     strategy="beforeInteractive"
     dangerouslySetInnerHTML={{
       __html: `
