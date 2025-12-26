@@ -90,7 +90,7 @@ export default function RootLayout({
             a.callMethod ? a.callMethod.apply(a,arguments) : a.queue.push(arguments)
           },a.push=a,a.queue=[],
           (c=t.createElement(n)).async=!0,
-          c.src="https://cdn-stag.optimeleon.com/mcf-mh4jy/aay-mh4k4/v1.main.js",
+          c.src="https://cdn-stag.optimeleon.com/mcf-mh4jy/aay-mh4k4/debug/v1.main.js",
           (m=t.getElementsByTagName(n)[0]).parentNode.insertBefore(c,m))
         }(window,document,"script");
         optimeleon("init", true, true);
