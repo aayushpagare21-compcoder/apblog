@@ -58,6 +58,8 @@ export default function RootLayout({
           h.head.appendChild(n);
           i.rmfk = function () {
             var t = h.getElementById(e);
+            console.log("rmfk=========e", e);
+            console.log("rmfk=========t", t);
             t && t.parentNode.removeChild(t);
           };
           setTimeout(i.rmfk, t);
