@@ -43,62 +43,6 @@ export default function RootLayout({
       `,
     }}
   />
-
-  {/* Optimeleon – Page hide overlay */}
-  <Script
-    id="metalytic"
-    strategy="beforeInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `
-        !(function (h, i, e) {
-          var t = 5000;
-          var n = h.createElement("style");
-          n.id = e;
-          n.innerHTML = "body{opacity:0}";
-          h.head.appendChild(n);
-          i.rmfk = function () {
-            var t = h.getElementById(e);
-            console.log("rmfk=========e", e);
-            console.log("rmfk=========t", t);
-            t && t.parentNode.removeChild(t);
-          };
-          setTimeout(i.rmfk, t);
-        })(document, window, "optimeleon-overlay");
-      `,
-    }}
-  />
-
-  {/* Optimeleon – Consent helper */}
-  <Script
-    id="optimeleon-consent"
-    strategy="beforeInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `
-        window.setOptiCookieConsent = function(consent) {
-          localStorage.setItem("opti_consent", consent);
-        };
-      `,
-    }}
-  />
-
-  {/* Optimeleon SDK */}
-  <Script
-    id="optimeleon-sdk"
-    strategy="afterInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `
-        !function(e,t,n,o,a,c,m){
-          e.optimeleon||(a=e.optimeleon=function(){
-            a.callMethod ? a.callMethod.apply(a,arguments) : a.queue.push(arguments)
-          },a.push=a,a.queue=[],
-          (c=t.createElement(n)).async=!0,
-          c.src="https://cdn-stag.optimeleon.com/mcf-mh4jy/aay-mh4k4/debug/v1.main.js",
-          (m=t.getElementsByTagName(n)[0]).parentNode.insertBefore(c,m))
-        }(window,document,"script");
-        optimeleon("init", true, true);
-      `,
-    }}
-  />
 </head>
 
 
