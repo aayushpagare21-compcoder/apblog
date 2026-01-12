@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion, useScroll, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export const metadata = {
   title: "About – Aayush Pagare | Full Stack Developer & AI Engineer",
@@ -55,6 +55,14 @@ const RevealText = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if (typeof window !== "undefined" && typeof (window as any).optimeleon === "function") {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).optimeleon("track", "about_page_custom_event");
+    }
+  }, []);
 
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>
