@@ -6,13 +6,10 @@ export default function Hero() {
   return (
     <section className="space-y-6">
       <div className="hidden md:flex gap-2">
-        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-            Full-Stack/AI
-        </div>
-        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold">
           Freelancer
         </div>
-        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold">
           Technical Writer
         </div>
       </div>
