@@ -35,10 +35,7 @@ export const LandingComponent = ({
         
          <HeroImage /> 
 
-        <RevealSection>
-          <Hero />
-        </RevealSection>  
-
+      
          <RevealSection delay={0.1}>
           <FreelanceServices />
         </RevealSection>
@@ -54,6 +51,11 @@ export const LandingComponent = ({
         <RevealSection delay={0.1}>
           <LatestPosts latestPosts={latestPosts} />
         </RevealSection>
+
+          <RevealSection>
+          <Hero />
+        </RevealSection>  
+
 
         <RevealSection delay={0.1}>
           <Skills />
