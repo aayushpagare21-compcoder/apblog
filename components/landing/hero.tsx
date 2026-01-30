@@ -32,7 +32,15 @@ export default function Hero() {
         <Button asChild size="lg">
           <Link href="/projects">View Work</Link>
         </Button>
-        <Button variant="outline" size="lg" asChild>
+        <Button
+          variant="outline"
+          size="lg"
+          asChild
+          onClick={() => {
+            console.log("GitHub clicked");
+            window.optimeleon?.("track", "posthog_last_fired_check");
+          }}
+        >
           <Link
             href="https://github.com/aayushpagare21-compcoder"
             target="_blank"
