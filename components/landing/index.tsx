@@ -32,6 +32,10 @@ export const LandingComponent = ({
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-9 md:space-y-18">
          <HeroImage />
+
+         <RevealSection>
+          <Hero />
+        </RevealSection>  
       
          <RevealSection delay={0.1}>
           <FreelanceServices />
@@ -48,10 +52,6 @@ export const LandingComponent = ({
         <RevealSection delay={0.1}>
           <LatestPosts latestPosts={latestPosts} />
         </RevealSection>
-
-        <RevealSection>
-          <Hero />
-        </RevealSection>  
 
         <RevealSection delay={0.1}>
           <Skills />

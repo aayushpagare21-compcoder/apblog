@@ -6,14 +6,17 @@ export default function Hero() {
   return (
     <section className="space-y-6">
       <div className="hidden md:flex gap-2">
-        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium" id="12345">
+        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold">
           Freelancer
+        </div>
+        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold">
+          Technical Writer 
         </div>
       </div>
 
       <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
         <span className="block">Aayush Pagare</span>
-        <span className="block mt-2 text-sm sm:text-sm text-muted-foreground">
+        <span className="block mt-2 text-xl sm:text-2xl text-muted-foreground">
           Building on RAG, LLMs, TS and Next.js
         </span>
       </h1>
