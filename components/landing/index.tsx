@@ -1,9 +1,7 @@
 "use client";
 
 import { motion, useScroll } from "framer-motion";
-import React from "react";
-import Hero from "@/components/landing/hero";
-import FreelanceServices from "@/components/landing/freelance";
+import React from "react";import FreelanceServices from "@/components/landing/freelance";
 import ClientTestimonials from "@/components/landing/clients";
 import FeaturedProjects from "@/components/landing/featured-projects";
 import LatestPosts from "@/components/landing/latest-posts";
