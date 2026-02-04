@@ -54,9 +54,9 @@ export const LandingComponent = ({
           <Skills />
         </RevealSection>
 
-         <RevealSection>
+         {/* <RevealSection>
           <Hero />
-        </RevealSection>  
+        </RevealSection>   */}
 
         {/* Contact CTA - Simple and direct */}
         <RevealSection delay={0.1}>
