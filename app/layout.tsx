@@ -82,7 +82,6 @@ export default function RootLayout({
   {/* Optimeleon Main Script */}
   <Script
     src="https://cdn-stag.optimeleon.com/gdp-dh8h8/aay-dh8hf/v1.main.js"
-    strategy="afterInteractive"
     async
   />
 </head>
