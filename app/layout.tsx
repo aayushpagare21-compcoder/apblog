@@ -79,10 +79,16 @@ export default function RootLayout({
     }}
   />
   
-  {/* Optimeleon Main Script */}
+  {/* Optimeleon Initialization */}
   <Script
-    src="https://cdn-stag.optimeleon.com/gdp-dh8h8/aay-dh8hf/v1.main.js"
-    async
+    id="optimeleon-init"
+    strategy="afterInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `
+        !function(e,t,n,o,c,a,m){e.optimeleon||(c=e.optimeleon=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},c.push=c,c.queue=[],(a=t.createElement(n)).async=!0,a.src="https://cdn-stag.optimeleon.com/mcf-m55jl/aay-1mvcw/v1.main.js",(m=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,m))}(window,document,"script");
+        optimeleon("init",true,true);
+      `,
+    }}
   />
 </head>
 
