@@ -29,6 +29,41 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
    <head>
+  {/* Optimeleon Cookie Consent */}
+  <Script
+    id="opti-cookie-consent"
+    strategy="beforeInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.setOptiCookieConsent = function(consent) {
+          localStorage.setItem("opti_consent", consent);
+        };
+      `,
+    }}
+  />
+  
+  {/* Optimeleon Overlay */}
+  <Script
+    id="optimeleon-overlay"
+    strategy="beforeInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `
+        !(function (h, i, e) {
+          var t = 2000;
+          var n = h.createElement("style");
+          n.id = e;
+          n.innerHTML = "body{opacity:0}";
+          h.head.appendChild(n);
+          i.rmfk = function () {
+            var t = h.getElementById(e);
+            t && t.parentNode.removeChild(t);
+          };
+          setTimeout(i.rmfk, t);
+        })(document, window, "optimeleon-overlay");
+      `,
+    }}
+  />
+  
   {/* Google Tag Manager */}
   <Script
     id="gtm-script"
@@ -42,6 +77,13 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','GTM-M9FQVCPW');
       `,
     }}
+  />
+  
+  {/* Optimeleon Main Script */}
+  <Script
+    src="https://cdn-stag.optimeleon.com/gdp-dh8h8/aay-dh8hf/v1.main.js"
+    strategy="afterInteractive"
+    async
   />
 </head>
 
