@@ -30,22 +30,31 @@ export const LandingComponent = ({
 
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-9 md:space-y-18">
          {/* <HeroImage /> */}
-
+{/* 
          <RevealSection>
-          <Hero />
-        </RevealSection>   
+         
+        </RevealSection>    */}
+
+          {/* <RevealSection delay={0.1}>
+        
+        </RevealSection> */}
+
+
+        {/* <RevealSection delay={0.1}>
+          
+        </RevealSection> */}
+
+
+{/* 
+        <RevealSection delay={0.1}>
       
-         <RevealSection delay={0.1}>
-          <FreelanceServices />
-        </RevealSection>
+        </RevealSection> */}
+         <Hero />
+        <FreelanceServices />
+        <FeaturedProjects featuredProjects={featuredProjects} />
+        <ClientTestimonials />
+       
 
-        <RevealSection delay={0.1}>
-          <FeaturedProjects featuredProjects={featuredProjects} />
-        </RevealSection>
-
-        <RevealSection delay={0.1}>
-          <ClientTestimonials />
-        </RevealSection>
 
         <RevealSection delay={0.1}>
           <LatestPosts latestPosts={latestPosts} />
