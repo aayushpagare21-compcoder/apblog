@@ -29,6 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
    <head>
+
+  <Script id="optimeleon-cookiebot" strategy="beforeInteractive" dangerouslySetInnerHTML={{__html: `<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>`}}/>
+    
+  
   {/* Optimeleon Cookie Consent */}
   <Script
     id="opti-cookie-consent"
