@@ -28,9 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
-        
         <script
           id="opti-cookie-consent"
           type="text/javascript"
@@ -90,6 +87,11 @@ export default function RootLayout({
             `,
           }}
         />
+
+
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script async id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
+        
 
         
       </head>
