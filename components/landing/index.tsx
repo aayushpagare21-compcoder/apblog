@@ -9,7 +9,6 @@ import Skills from "@/components/landing/skills";
 import { Button } from "@/components/ui/button";
 import { Post, Project } from "@/lib/types";
 import { RevealSection } from "../reveal-section";
-import HeroImage from "./hero-image";
 import Hero from "./hero";
 
 export const LandingComponent = ({
