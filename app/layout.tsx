@@ -28,6 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
+        <script async id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
+        
         <script
           id="opti-cookie-consent"
           type="text/javascript"
@@ -77,39 +79,16 @@ export default function RootLayout({
         />
         
         <script
-          id="optimeleon-cookiebot-simulation"
+          id="optimeleon-init"
           type="text/javascript"
+          async
           dangerouslySetInnerHTML={{
             __html: `
-              // Start Optimeleon immediately
-              console.log('[SIMULATION] Starting Optimeleon initialization...');
               !function(e,t,n,o,c,a,m){e.optimeleon||(c=e.optimeleon=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},c.push=c,c.queue=[],(a=t.createElement(n)).async=!0,a.src="https://cdn-stag.optimeleon.com/mcf-m55jl/aay-1mvcw/v1.main.js",(m=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,m))}(window,document,"script");
               optimeleon("init",true,true);
-              console.log('[SIMULATION] Optimeleon init called, script loading...');
-              
-              // Inject Cookiebot immediately after Optimeleon starts
-              console.log('[SIMULATION] Cookiebot injecting - attempting to block Optimeleon...');
-              
-              // Create Cookiebot script
-              var script = document.createElement('script');
-              script.id = 'Cookiebot';
-              script.src = 'https://consent.cookiebot.com/uc.js';
-              script.setAttribute('data-cbid', '7667d368-e0ce-4baa-b12f-bf07310ae6c3');
-              script.setAttribute('data-blockingmode', 'auto');
-              script.type = 'text/javascript';
-              script.async = true;
-              
-              // Cookiebot will block scripts when it loads
-              script.onload = function() {
-                console.log('[SIMULATION] Cookiebot loaded - now blocking tracking scripts');
-              };
-              
-              document.head.appendChild(script);
-              console.log('[SIMULATION] Cookiebot script injected');
             `,
           }}
         />
-        
       </head>
 
 
