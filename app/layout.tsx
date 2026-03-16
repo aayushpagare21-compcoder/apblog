@@ -31,7 +31,7 @@ export default function RootLayout({
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
         
-        {/* <script
+        <script
           id="opti-cookie-consent"
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -41,9 +41,9 @@ export default function RootLayout({
               };
             `,
           }}
-        /> */}
+        />
         
-        {/* <script
+        <script
           id="optimeleon-overlay"
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -62,10 +62,10 @@ export default function RootLayout({
               })(document, window, "optimeleon-overlay");
             `,
           }}
-        /> */}
+        />
         
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
-        {/* <script
+        <script
           id="gtm-script"
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -77,8 +77,8 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-M9FQVCPW');
             `,
           }}
-        /> */}
-{/*         
+        />
+        
         <script
           id="optimeleon-init"
           type="text/javascript"
@@ -89,7 +89,7 @@ export default function RootLayout({
               optimeleon("init",true,true);
             `,
           }}
-        /> */}
+        />
 
         
       </head>
