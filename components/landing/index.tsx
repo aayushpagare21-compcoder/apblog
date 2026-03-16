@@ -34,18 +34,17 @@ export const LandingComponent = ({
          <RevealSection>
           <Hero />
         </RevealSection>   
-
-        <RevealSection delay={0.1}>
-           <FreelanceServices />
+      
+         <RevealSection delay={0.1}>
+          <FreelanceServices />
         </RevealSection>
-
 
         <RevealSection delay={0.1}>
           <FeaturedProjects featuredProjects={featuredProjects} />
         </RevealSection>
 
         <RevealSection delay={0.1}>
-         <ClientTestimonials />
+          <ClientTestimonials />
         </RevealSection>
 
         <RevealSection delay={0.1}>
