@@ -89,10 +89,23 @@ export default function RootLayout({
         />
 
 
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script async id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
-        
-
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              setTimeout(function() {
+                var script = document.createElement('script');
+                script.id = 'Cookiebot';
+                script.src = 'https://consent.cookiebot.com/uc.js';
+                script.setAttribute('data-cbid', '7667d368-e0ce-4baa-b12f-bf07310ae6c3');
+                script.setAttribute('data-blockingmode', 'auto');
+                script.type = 'text/javascript';
+                script.async = true;
+                document.head.appendChild(script);
+              }, 3000);
+            `,
+          }}
+        />
         
       </head>
 
