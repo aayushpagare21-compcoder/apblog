@@ -44,51 +44,6 @@ export default function RootLayout({
             `,
           }}
         />
-        
-        <script
-          id="opti-cookie-consent"
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.setOptiCookieConsent = function(consent) {
-                localStorage.setItem("opti_consent", consent);
-              };
-            `,
-          }}
-        />
-        
-        <script
-          id="optimeleon-overlay"
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              !(function (h, i, e) {
-                var t = 2000;
-                var n = h.createElement("style");
-                n.id = e;
-                n.innerHTML = "body{opacity:0}";
-                h.head.appendChild(n);
-                i.rmfk = function () {
-                  var t = h.getElementById(e);
-                  t && t.parentNode.removeChild(t);
-                };
-                setTimeout(i.rmfk, t);
-              })(document, window, "optimeleon-overlay");
-            `,
-          }}
-        />
-
-        <script
-          id="optimeleon-init"
-          type="text/javascript"
-          async
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(e,t,n,o,c,a,m){e.optimeleon||(c=e.optimeleon=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},c.push=c,c.queue=[],(a=t.createElement(n)).async=!0,a.src="https://cdn-stag.optimeleon.com/mcf-m55jl/aay-1mvcw/v1.main.js",(m=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,m))}(window,document,"script");
-              optimeleon("init",true,true);
-            `,
-          }}
-        />
       </head>
 
 
