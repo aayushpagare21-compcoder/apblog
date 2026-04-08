@@ -9,15 +9,15 @@ export default function Hero() {
         <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold">
           Freelancer
         </div>
-        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-lg font-medium">
-          Technical Writer 
+        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-lg font-medium pankaj">
+          Technical Writer
         </div>
       </div>
 
       <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-        <span className="block">Aayush Pagare</span>
-        <span className="block mt-2 text-xl sm:text-2xl text-muted-foreground">
-          Building on RAG, LLMs, TS and Next.js
+        <span className="block text-primary">Aayush Pagare</span>
+        <span className="block mt-2 text-xl sm:text-2xl text-muted-foreground new-cls">
+          Building on RAG, LLMs, TS, Nest.js and Next.js
         </span>
       </h1>
 
