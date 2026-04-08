@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Aayush Pagare",
   description:
     "Full Stack Engineer with 2+ years of experience building production-ready web apps end-to-end.",
+  alternates: {
+    canonical: "https://aayushpagare.com",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
+        <link rel="canonical" href="https://aayushpagare.com" />
         <script async id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
         
            {/* eslint-disable-next-line @next/next/next-script-for-ga */}
