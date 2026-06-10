@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "apblog feature list",
+  "description": "Schema for .claude/feature-list.json — the canonical feature inventory.",
+  "type": "object",
+  "required": ["project", "lastUpdated", "features"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "project": { "type": "string" },
+    "description": { "type": "string" },
+    "lastUpdated": { "type": "string", "description": "ISO date YYYY-MM-DD of last edit" },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "status", "entrypoints"],
+        "properties": {
+          "id": { "type": "string", "description": "kebab-case stable id" },
+          "name": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["planned", "in_progress", "implemented", "needs_verification", "deprecated"]
+          },
+          "owner": { "type": "string", "description": "human | claude | unassigned" },
+          "entrypoints": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "primary files where this feature is rooted"
+          },
+          "surfaces": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "other files this feature touches"
+          },
+          "verifiedBy": { "type": "string", "description": "how completion is checked" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

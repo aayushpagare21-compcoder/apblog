@@ -1,0 +1,105 @@
+{
+  "$schema": "./feature-list.schema.json",
+  "project": "apblog",
+  "description": "Machine-readable inventory of features and their implementation status. Update whenever a feature is added, changed, or its status moves. Statuses: planned | in_progress | implemented | needs_verification | deprecated.",
+  "lastUpdated": "2026-06-10",
+  "features": [
+    {
+      "id": "landing-page",
+      "name": "Landing page",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/page.tsx", "components/landing/index.tsx"],
+      "surfaces": ["components/landing/hero.tsx", "components/landing/featured-projects.tsx", "components/landing/latest-posts.tsx", "components/landing/skills.tsx", "components/landing/clients.tsx", "components/landing/freelance.tsx", "components/landing/hero-image.tsx"],
+      "verifiedBy": "build + dev smoke",
+      "notes": "Composed section components. Pulls latest posts + featured projects from content loaders."
+    },
+    {
+      "id": "blog-index",
+      "name": "Blog listing + category filter",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/blog/page.tsx", "components/blog/index.tsx"],
+      "surfaces": ["lib/mdx.ts", "components/category-filter.tsx", "components/post-card.tsx"],
+      "verifiedBy": "build + dev smoke",
+      "notes": "getAllPosts + getAllCategories. Must not break when content/blog is empty (only .gitkeep present)."
+    },
+    {
+      "id": "blog-detail",
+      "name": "Blog post detail (SSG + metadata)",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/blog/[slug]/page.tsx"],
+      "surfaces": ["lib/mdx.ts", "components/mdx-content.tsx", "app/sitemap.ts"],
+      "verifiedBy": "build (generateStaticParams) + dev smoke",
+      "notes": "generateStaticParams + generateMetadata; revalidate=84000; react-markdown rendering."
+    },
+    {
+      "id": "projects-index",
+      "name": "Projects listing",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/projects/page.tsx", "components/projects/index.tsx"],
+      "surfaces": ["lib/projects.ts", "components/project-card.tsx"],
+      "verifiedBy": "build + dev smoke",
+      "notes": "Two live projects: answerwriting, embedme."
+    },
+    {
+      "id": "projects-detail",
+      "name": "Project detail (SSG + metadata)",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/projects/[slug]/page.tsx"],
+      "surfaces": ["lib/projects.ts", "components/mdx-content.tsx", "app/sitemap.ts"],
+      "verifiedBy": "build + dev smoke",
+      "notes": "Mirrors blog-detail pattern."
+    },
+    {
+      "id": "about-page",
+      "name": "About page",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/about/page.tsx", "components/about/index.tsx"],
+      "verifiedBy": "build + dev smoke",
+      "notes": "Static content."
+    },
+    {
+      "id": "theming",
+      "name": "Light/dark/system theming",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/layout.tsx", "components/mode-toggle.tsx"],
+      "surfaces": ["app/globals.css"],
+      "verifiedBy": "dev smoke (toggle in all modes)",
+      "notes": "next-themes; CSS variable tokens."
+    },
+    {
+      "id": "seo-sitemap",
+      "name": "SEO metadata + sitemap",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/sitemap.ts", "app/layout.tsx"],
+      "surfaces": ["app/blog/[slug]/page.tsx", "app/projects/[slug]/page.tsx"],
+      "verifiedBy": "build + inspect /sitemap.xml in dev",
+      "notes": "Per-page generateMetadata + OG; canonical domain https://aayushpagare.com."
+    },
+    {
+      "id": "analytics-consent",
+      "name": "Analytics + cookie consent",
+      "status": "implemented",
+      "owner": "human",
+      "entrypoints": ["app/layout.tsx"],
+      "verifiedBy": "manual (do not modify without approval)",
+      "notes": "Cookiebot + GTM-M9FQVCPW + Vercel Analytics/Speed Insights. PROTECTED."
+    },
+    {
+      "id": "test-infrastructure",
+      "name": "Automated test infrastructure",
+      "status": "planned",
+      "owner": "unassigned",
+      "entrypoints": [],
+      "verifiedBy": "n/a",
+      "notes": "playwright is installed but unconfigured. No runner, config, or test files. See .claude/skills/test-generation before introducing."
+    }
+  ]
+}
