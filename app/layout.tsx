@@ -32,9 +32,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
         <link rel="canonical" href="https://aayushpagare.com" />
-        <script async id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7667d368-e0ce-4baa-b12f-bf07310ae6c3" data-blockingmode="auto" type="text/javascript"></script>
-        
-           {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+        <script
+          async
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="ff73d40d-3a60-41fd-b223-3192e27a4872"
+          data-blockingmode="auto"
+          type="text/javascript"
+        ></script>
+
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         <script
           id="gtm-script"
           type="text/javascript"
@@ -50,9 +57,8 @@ export default function RootLayout({
         />
       </head>
 
-
       <body className="bg-background text-foreground antialiased">
-       <noscript>
+        <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-M9FQVCPW"
             height="0"
