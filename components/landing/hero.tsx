@@ -36,16 +36,13 @@ export default function Hero() {
           variant="outline"
           size="lg"
           asChild
-          onClick={() => {
-            console.log("GitHub clicked");
-            window.optimeleon?.("track", "posthog_last_fired_check");
-          }}
         >
           <Link
             href="https://github.com/aayushpagare21-compcoder"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2"
+            data-gtm="view-github"
           >
             <GitBranch className="h-4 w-4" /> GitHub
           </Link>
