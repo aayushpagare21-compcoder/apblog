@@ -30,7 +30,7 @@ export default function Hero() {
 
       <div className="flex flex-wrap gap-4 pt-2">
         <Button asChild size="lg">
-          <Link href="/projects">View Work</Link>
+          <Link href="/projects" id="view-work">View Work</Link>
         </Button>
         <Button
           variant="outline"
