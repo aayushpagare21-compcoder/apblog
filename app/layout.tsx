@@ -7,7 +7,6 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,28 +45,20 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-M9FQVCPW');
             `,
           }}
-        /> 
+        />
 
-        <script> 
-          console.log("Aayush Aayush Aayush")
-        </script>
-
-
-        <script> 
-          console.log("Aayush Aayush Aayush")
-        </script>
-
-
-        <script> 
-          console.log("Aayush Aayush Aayush")
-        </script>
-
-
-        <script> 
-          console.log("Aayush Aayush Aayush")
-        </script>
-
-
+        <script
+          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
+        />
 
         <link rel="canonical" href="https://aayushpagare.com" />
 
