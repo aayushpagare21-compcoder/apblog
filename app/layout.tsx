@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
       <head>
 
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
-        {/* <script
+        <script
           id="gtm-script"
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -45,8 +46,32 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-M9FQVCPW');
             `,
           }}
-        /> */}
-        
+        /> 
+
+        <script> 
+          console.log("Aayush Aayush Aayush")
+        </script>
+
+
+        <script> 
+          console.log("Aayush Aayush Aayush")
+        </script>
+
+
+        <script> 
+          console.log("Aayush Aayush Aayush")
+        </script>
+
+
+        <script> 
+          console.log("Aayush Aayush Aayush")
+        </script>
+
+
+
+        <link rel="canonical" href="https://aayushpagare.com" />
+
+
         {/* Optimeleon anti-flicker + loader snippet */}
         <style
           id="__opti_af"
@@ -57,16 +82,14 @@ export default function RootLayout({
             __html: `window.optimeleon=window.optimeleon||function(){(optimeleon.q=optimeleon.q||[]).push(arguments);return{ok:true,verb:String(arguments[0]||''),error:'queued'}};window.__opti_bus="__opti_capture";window.__opti_capture=window.__opti_capture||function(){(__opti_capture.q=__opti_capture.q||[]).push(arguments)};setTimeout(function(){var s=document.getElementById('__opti_af');if(s)s.remove()},300);`,
           }}
         />
-        <script async src="http://localhost:8787/b/GQFm8YGvO01h.js" />
+        <script async src="http://localhost:8787/b/hFEyJiKVSmw2.js" />
         <script
           async
-          src="http://localhost:8787/c/GQFm8YGvO01h.js"
+          src="http://localhost:8787/c/hFEyJiKVSmw2.js"
           data-consent-default="opt-in"
         />
 
-        <link rel="canonical" href="https://aayushpagare.com" />
 
-        
       </head>
 
       <body className="bg-background text-foreground antialiased">
