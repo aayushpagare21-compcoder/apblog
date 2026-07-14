@@ -33,7 +33,7 @@ export default function RootLayout({
       <head>
 
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
-        <script
+        {/* <script
           id="gtm-script"
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -45,7 +45,7 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-M9FQVCPW');
             `,
           }}
-        />
+        /> */}
         
         {/* Optimeleon anti-flicker + loader snippet */}
         <style
