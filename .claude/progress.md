@@ -31,6 +31,7 @@ Living record of current work state. **Read this at the start of every session**
 | 2026-06-10 | Harness setup: added `.claude/` operating system (instructions, state, verification, scope, lifecycle, skills, commands), CLAUDE.md + AGENTS.md | tsc ✅, lint ✅ | No app code changed — docs/tooling only. |
 | 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `hFEyJiKVSmw2` to `bwzk36eUJ4ZO` (both `/b/` and `/c/` URLs). Protected-file edit, human-approved via AskUserQuestion ("Replace whole block"). | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline anti-flicker/bootstrap code unchanged (byte-identical to pasted snippet). URLs still point at `http://localhost:8787` — dev/testing setup, will not load in production. |
 | 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `bwzk36eUJ4ZO` to `UBEQSrIlM591` (both `/b/` and `/c/` URLs). Same operation as previous row; approval carried over. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline code again byte-identical; only the script ID changed. |
+| 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `UBEQSrIlM591` to `pvYDpAvGIQEj` (both `/b/` and `/c/` URLs). Standing-approved snippet-paste workflow. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ | Inline code byte-identical; only the script ID changed. |
 
 ## How to update this file
 
