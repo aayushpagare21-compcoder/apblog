@@ -8,7 +8,7 @@ Living record of current work state. **Read this at the start of every session**
 
 - **Status**: Baseline. App is fully implemented and shipping on Vercel. No active feature work in flight.
 - **Branch**: `main`
-- **Last verified**: 2026-06-10 — `npx tsc --noEmit` ✅ (exit 0), `npm run lint` ✅ ("No ESLint warnings or errors"). Full `npm run build` not run in this session.
+- **Last verified**: 2026-07-15 — `npx tsc --noEmit` ✅ (exit 0), `npm run lint` ✅ ("No ESLint warnings or errors"), `npm run build` ✅ (10/10 static pages generated).
 - **In flight**: none
 - **Blocked on**: nothing
 - **Next up**: pick up new tasks as assigned. The blog index has zero posts (`content/blog/` holds only `.gitkeep`) — net-new posts are a content drop, not a code change.
@@ -29,6 +29,7 @@ Living record of current work state. **Read this at the start of every session**
 | Date | Change | Verification | Notes |
 |------|--------|--------------|-------|
 | 2026-06-10 | Harness setup: added `.claude/` operating system (instructions, state, verification, scope, lifecycle, skills, commands), CLAUDE.md + AGENTS.md | tsc ✅, lint ✅ | No app code changed — docs/tooling only. |
+| 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `hFEyJiKVSmw2` to `bwzk36eUJ4ZO` (both `/b/` and `/c/` URLs). Protected-file edit, human-approved via AskUserQuestion ("Replace whole block"). | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline anti-flicker/bootstrap code unchanged (byte-identical to pasted snippet). URLs still point at `http://localhost:8787` — dev/testing setup, will not load in production. |
 
 ## How to update this file
 
