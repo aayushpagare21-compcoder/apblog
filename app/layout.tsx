@@ -74,11 +74,7 @@ export default function RootLayout({
           }}
         />
         <script async src="https://edge-staging.optimeleon.com/b/vhuNjqRmC7LQ.js" />
-        <script
-          async
-          src="https://edge-staging.optimeleon.com/c/vhuNjqRmC7LQ.js"
-          data-consent-default="opt-in"
-        />
+        <script async src="https://edge-staging.optimeleon.com/c/vhuNjqRmC7LQ.js" />
 
 
       </head>
