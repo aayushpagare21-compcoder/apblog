@@ -8,7 +8,7 @@ Living record of current work state. **Read this at the start of every session**
 
 - **Status**: Baseline. App is fully implemented and shipping on Vercel. No active feature work in flight.
 - **Branch**: `main`
-- **Last verified**: 2026-07-15 — `npx tsc --noEmit` ✅ (exit 0), `npm run lint` ✅ ("No ESLint warnings or errors"), `npm run build` ✅ (10/10 static pages generated).
+- **Last verified**: 2026-07-23 — `npx tsc --noEmit` ✅ (exit 0), `npm run lint` ✅ ("No ESLint warnings or errors"), `npm run build` ✅ (10/10 static pages generated).
 - **In flight**: none
 - **Blocked on**: nothing
 - **Next up**: pick up new tasks as assigned. The blog index has zero posts (`content/blog/` holds only `.gitkeep`) — net-new posts are a content drop, not a code change.
@@ -32,6 +32,7 @@ Living record of current work state. **Read this at the start of every session**
 | 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `hFEyJiKVSmw2` to `bwzk36eUJ4ZO` (both `/b/` and `/c/` URLs). Protected-file edit, human-approved via AskUserQuestion ("Replace whole block"). | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline anti-flicker/bootstrap code unchanged (byte-identical to pasted snippet). URLs still point at `http://localhost:8787` — dev/testing setup, will not load in production. |
 | 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `bwzk36eUJ4ZO` to `UBEQSrIlM591` (both `/b/` and `/c/` URLs). Same operation as previous row; approval carried over. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline code again byte-identical; only the script ID changed. |
 | 2026-07-15 | Updated Optimeleon loader script ID in `app/layout.tsx` from `UBEQSrIlM591` to `pvYDpAvGIQEj` (both `/b/` and `/c/` URLs). Standing-approved snippet-paste workflow. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ | Inline code byte-identical; only the script ID changed. |
+| 2026-07-23 | Updated Optimeleon loader URLs in `app/layout.tsx` from `http://localhost:8787/{b,c}/cdz5ubaRcEvc.js` to `https://edge-staging.optimeleon.com/{b,c}/vhuNjqRmC7LQ.js` (host + ID changed). Standing-approved snippet-paste workflow. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline anti-flicker/bootstrap code byte-identical to paste; kept existing `data-consent-default="opt-in"` attribute on the `/c/` script (present in JSX, not in raw paste — deliberate). |
 
 ## How to update this file
 
