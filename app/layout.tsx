@@ -69,8 +69,8 @@ export default function RootLayout({
             __html: `window.optimeleon=window.optimeleon||function(){(optimeleon.q=optimeleon.q||[]).push(arguments);return{ok:true,verb:String(arguments[0]||''),error:'queued'}};window.__opti_bus="__opti_capture";window.__opti_capture=window.__opti_capture||function(){(__opti_capture.q=__opti_capture.q||[]).push(arguments)};setTimeout(function(){var s=document.getElementById('__opti_af');if(s)s.remove()},300);`,
           }}
         />
-        <script async src="http://localhost:8787/b/ySYXPYxZJ59U.js" />
-        <script async src="http://localhost:8787/c/ySYXPYxZJ59U.js" />
+        <script async src="https://edge-staging.optimeleon.com/b/4VHBWcFaoNfV.js" />
+        <script async src="https://edge-staging.optimeleon.com/c/4VHBWcFaoNfV.js" />
 
 
       </head>
