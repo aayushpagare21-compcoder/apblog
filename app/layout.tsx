@@ -32,6 +32,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
 
+        {/* Optimeleon anti-flicker + loader snippet */}
+        <style
+          id="__opti_af"
+          dangerouslySetInnerHTML={{ __html: "body{opacity:0!important}" }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.optimeleon=window.optimeleon||function(){(optimeleon.q=optimeleon.q||[]).push(arguments);return{ok:true,verb:String(arguments[0]||''),error:'queued'}};window.__opti_bus="__opti_capture";window.__opti_capture=window.__opti_capture||function(){(__opti_capture.q=__opti_capture.q||[]).push(arguments)};setTimeout(function(){var s=document.getElementById('__opti_af');if(s)s.remove()},300);`,
+          }}
+        />
+        <script async src="https://edge-staging.optimeleon.com/b/4VHBWcFaoNfV.js" />
+        <script async src="https://edge-staging.optimeleon.com/c/4VHBWcFaoNfV.js" />
+
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         <script
           id="gtm-script"
@@ -61,17 +74,6 @@ export default function RootLayout({
         />
 
         <link rel="canonical" href="https://aayushpagare.com" />
-
-
-        {/* Optimeleon loader snippet */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.optimeleon=window.optimeleon||function(){(optimeleon.q=optimeleon.q||[]).push(arguments);return{ok:true,verb:String(arguments[0]||''),error:'queued'}};window.__opti_bus="__opti_capture";window.__opti_capture=window.__opti_capture||function(){(__opti_capture.q=__opti_capture.q||[]).push(arguments)};setTimeout(function(){var s=document.getElementById('__opti_af');if(s)s.remove()},300);`,
-          }}
-        />
-        <script async src="https://edge-staging.optimeleon.com/b/4VHBWcFaoNfV.js" />
-        <script async src="https://edge-staging.optimeleon.com/c/4VHBWcFaoNfV.js" />
-
 
       </head>
 
