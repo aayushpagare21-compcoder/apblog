@@ -44,7 +44,7 @@ Markdown body content is rendered through `react-markdown`; `components/mdx-cont
 - UI primitives live in `components/ui/` (shadcn). Feature components are grouped by section: `components/landing`, `components/about`, `components/blog`, `components/projects`.
 - Theming via `next-themes` (`ThemeProvider` in `app/layout.tsx`, `mode-toggle.tsx`). Color tokens are CSS variables defined in `app/globals.css`.
 - The canonical production domain is `https://aayushpagare.com` (hardcoded in metadata, sitemap, and OG image URLs).
-- `app/layout.tsx` injects Cookiebot, Google Tag Manager (GTM-M9FQVCPW), and Vercel Analytics/Speed Insights via inline scripts in `<head>`.
+- `app/layout.tsx` injects etracker (cookieless, `data-block-cookies="true"`) via scripts in `<head>`, plus Vercel Analytics/Speed Insights.
 - Server Components by default (App Router). Only add `"use client"` when a component needs hooks/interactivity — keep the client boundary as low in the tree as possible.
 
 ## Operating Rules

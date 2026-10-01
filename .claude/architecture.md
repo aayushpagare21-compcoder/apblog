@@ -15,7 +15,7 @@ Deep architecture map for `apblog`. Read this before any non-trivial change. The
 | MD render | `react-markdown` | styled via `components/mdx-content.tsx` |
 | Animation | `framer-motion`, `react-intersection-observer` | reveal-on-scroll |
 | Theming | `next-themes` | light/dark, system |
-| Analytics | Vercel Analytics + Speed Insights, GTM, Cookiebot | injected in `app/layout.tsx` |
+| Analytics | Vercel Analytics + Speed Insights, etracker | injected in `app/layout.tsx` |
 | Deploy | Vercel | static export of content at build time |
 
 No database, no API routes, no auth, no server actions. Everything renders from the filesystem at build time.
@@ -88,7 +88,7 @@ If you touch one, check whether the other three need to follow.
 - **`cn()` everywhere** for conditional Tailwind classes; never string-concatenate class names.
 - **Design tokens** are CSS variables in `app/globals.css`; reference them via Tailwind, don't hardcode hex colors in components.
 - **Client boundary**: `app/layout.tsx` is where providers and third-party scripts live. Most pages/components are Server Components; interactive ones (`mode-toggle`, `category-filter`, sliders, reveal sections) are client components.
-- **Analytics/consent** (Cookiebot, GTM-M9FQVCPW, Vercel) live in `app/layout.tsx` — treat as protected (see `.claude/scope.md`).
+- **Analytics/consent** (etracker, Vercel) live in `app/layout.tsx` — treat as protected (see `.claude/scope.md`).
 
 ## Known gaps / sharp edges
 

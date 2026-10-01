@@ -8,7 +8,7 @@ Living record of current work state. **Read this at the start of every session**
 
 - **Status**: Baseline. App is fully implemented and shipping on Vercel. No active feature work in flight.
 - **Branch**: `main`
-- **Last verified**: 2026-07-23 — `npx tsc --noEmit` ✅ (exit 0), `npm run lint` ✅ ("No ESLint warnings or errors"), `npm run build` ✅ (10/10 static pages generated).
+- **Last verified**: 2026-10-01 — `npx tsc --noEmit` ✅ (exit 0), `npm run lint` ✅ ("No ESLint warnings or errors"), `npm run build` ✅ (10/10 static pages generated).
 - **In flight**: none
 - **Blocked on**: nothing
 - **Next up**: pick up new tasks as assigned. The blog index has zero posts (`content/blog/` holds only `.gitkeep`) — net-new posts are a content drop, not a code change.
@@ -38,6 +38,7 @@ Living record of current work state. **Read this at the start of every session**
 | 2026-07-24 | Updated Optimeleon loader URLs in `app/layout.tsx` from `http://localhost:8787/{b,c}/vy2rwmF0nv3Q.js` to `https://edge.optimeleon.com/{b,c}/SqTx4MCBUrHE.js` (host + ID changed; first time on production edge host). Standing-approved snippet-paste workflow. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline code byte-identical; block mirrors paste exactly. |
 | 2026-07-24 | Reverted Optimeleon loader URLs in `app/layout.tsx` back to `http://localhost:8787/{b,c}/vy2rwmF0nv3Q.js` (from `edge.optimeleon.com/{b,c}/SqTx4MCBUrHE.js`). Standing-approved snippet-paste workflow. | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | Inline code byte-identical; block mirrors paste exactly. |
 | 2026-08-03 | Updated Optimeleon loader URLs in `app/layout.tsx` to `http://localhost:8787/{b,c}/ySYXPYxZJ59U.js` (from `vy2rwmF0nv3Q`) and **removed the `<style id="__opti_af">` anti-flicker tag** per explicit user instruction ("implement without the anti flicker style tag… remove the old script as well"). | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages) | First time the AF style tag is intentionally omitted. Inline bootstrap script kept byte-identical to the paste (still contains the `__opti_af` cleanup `setTimeout`, now a no-op). |
+| 2026-10-01 | Removed GTM (GTM-M9FQVCPW head script + `<noscript>` iframe) and all Optimeleon code (anti-flicker style, bootstrap + `/b/` `/c/` loader scripts in `app/layout.tsx`; `about_page_custom_event` tracking effect in `components/about/index.tsx`; `types/global.d.ts`, which only typed `window.optimeleon`). Dropped the orphaned `data-gtm="view-github"` attribute in `components/landing/hero.tsx`. Added etracker code 6.0 (`_etLoader`, `data-block-cookies="true"`, secure code `MCmVss`) to `<head>`, mirroring the pasted snippet. Explicit user request (protected-file edit approved by the instruction itself). | tsc ✅ (exit 0), lint ✅ ("No ESLint warnings or errors"), build ✅ (10/10 pages); built `index.html` contains the `_etLoader` tag with all attributes and 0 Optimeleon/GTM references | Harness docs updated to say etracker instead of Cookiebot/GTM (Cookiebot was already absent from the code). The four `console.log("Aayush…")` head scripts were left untouched — not part of the request. Not smoke-tested in a browser against etracker's servers. |
 
 ## How to update this file
 

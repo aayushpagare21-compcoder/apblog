@@ -18,7 +18,7 @@ Before merging to `main` / before a deploy / when asked "is this shippable?".
    - `npm run lint` → no warnings/errors
    - `npm run build` → completes; **all expected static routes generated** (blog/projects slugs, sitemap). Scan build output for failures or unexpectedly missing routes.
 3. **SSG/SEO spot-check** — `npm run start` (or dev): each top route renders; `/sitemap.xml` lists expected URLs; a sample post/project detail renders; canonical domain `https://aayushpagare.com` intact in metadata/OG.
-4. **Protected-file audit** — diff against `scope.md`: analytics/consent (Cookiebot, GTM-M9FQVCPW, Vercel), config, deps unchanged unless explicitly approved.
+4. **Protected-file audit** — diff against `scope.md`: analytics/consent (etracker, Vercel), config, deps unchanged unless explicitly approved.
 5. **Content sanity** — new `.md` files have valid frontmatter (build would fail otherwise); no broken `image`/`liveUrl`/`githubUrl` references.
 6. **Verdict** — GO / NO-GO with the evidence block and any caveats.
 

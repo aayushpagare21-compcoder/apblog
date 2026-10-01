@@ -90,7 +90,7 @@
       "owner": "human",
       "entrypoints": ["app/layout.tsx"],
       "verifiedBy": "manual (do not modify without approval)",
-      "notes": "Cookiebot + GTM-M9FQVCPW + Vercel Analytics/Speed Insights. PROTECTED."
+      "notes": "etracker (cookieless, secure code MCmVss) + Vercel Analytics/Speed Insights. GTM and Optimeleon removed 2026-10-01. PROTECTED."
     },
     {
       "id": "test-infrastructure",

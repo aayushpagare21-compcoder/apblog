@@ -32,60 +32,34 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
 
-        {/* Optimeleon anti-flicker + loader snippet */}
-        <style
-          id="__opti_af"
-          dangerouslySetInnerHTML={{ __html: "body{opacity:0!important}" }}
-        />
+        {/* Copyright (c) 2000-2026 etracker GmbH. All rights reserved. No reproduction, publication or modification allowed without permission. */}
+        {/* etracker code 6.0 */}
         <script
-          dangerouslySetInnerHTML={{
-            __html: `window.optimeleon=window.optimeleon||function(){(optimeleon.q=optimeleon.q||[]).push(arguments);return{ok:true,verb:String(arguments[0]||''),error:'queued'}};window.__opti_bus="__opti_capture";window.__opti_capture=window.__opti_capture||function(){(__opti_capture.q=__opti_capture.q||[]).push(arguments)};setTimeout(function(){var s=document.getElementById('__opti_af');if(s)s.remove()},300);`,
-          }}
-        />
-        <script async src="https://edge-staging.optimeleon.com/b/4VHBWcFaoNfV.js" />
-        <script async src="https://edge-staging.optimeleon.com/c/4VHBWcFaoNfV.js" />
-
-        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
-        <script
-          id="gtm-script"
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-M9FQVCPW');
-            `,
+// var et_pagename = "";
+// var et_areas = "";
+`,
           }}
         />
+        <script
+          id="_etLoader"
+          type="text/javascript"
+          charSet="UTF-8"
+          data-block-cookies="true"
+          data-secure-code="MCmVss"
+          src="//code.etracker.com/code/e.js"
+          async
+        />
+        {/* etracker code 6.0 end */}
 
-        <script
-          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
-        />
-        <script
-          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
-        />
-        <script
-          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
-        />
-        <script
-          dangerouslySetInnerHTML={{ __html: `console.log("Aayush Aayush Aayush")` }}
-        />
-
+      
         <link rel="canonical" href="https://aayushpagare.com" />
 
       </head>
 
       <body className="bg-background text-foreground antialiased">
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M9FQVCPW"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex min-h-screen flex-col">
             <Navbar />

@@ -42,7 +42,6 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2"
-            data-gtm="view-github"
           >
             <GitBranch className="h-4 w-4" /> GitHub
           </Link>

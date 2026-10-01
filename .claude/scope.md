@@ -23,7 +23,7 @@ When unsure which bucket you're in, round **up**.
 | `tsconfig.json` | Type-checking + path-alias contract. |
 | `eslint.config.mjs` | Lint contract — relaxing rules hides real problems. |
 | `.gitignore` | Risk of committing secrets/artifacts. |
-| `app/layout.tsx` — analytics/consent scripts (Cookiebot, GTM-M9FQVCPW, Vercel) | Legal/compliance + tracking; breaking these has off-site consequences. Layout structure edits OK with care; **do not touch the consent/analytics scripts** without approval. |
+| `app/layout.tsx` — analytics/consent scripts (etracker, Vercel) | Legal/compliance + tracking; breaking these has off-site consequences. Layout structure edits OK with care; **do not touch the consent/analytics scripts** without approval. |
 | `components/ui/*` | Generated shadcn primitives. Re-style via composition/`className`, not by editing primitives. |
 | `public/*` (deletions) | Live assets referenced by content/metadata. |
 | `content/**/*.md` (deletions/edits to existing) | Published content. Adding new files is fine; editing/removing existing needs confirmation. |
